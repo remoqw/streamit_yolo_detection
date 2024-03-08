@@ -7,15 +7,17 @@ import os
 if torch.cuda.is_available(): device = 'cuda'
 else: device = 'cpu'
 
-model = YOLO(r"runs\detect\train4\weights\best.pt")
+model = YOLO(r"runs\detect\train\weights\best.pt")
+
+st.title('app for cars detection')
 
 uploaded_files = st.file_uploader("Выберите изображения", accept_multiple_files=True)
 
 
 if st.button("Справка"):
     st.write('hello')
-if st.button("Скрыть справку"):
-    st.write('')
+    if st.button("Скрыть справку"):
+        st.write('')
 
 
 for file in uploaded_files:
